@@ -14,6 +14,22 @@ var btnposition = 'right';
             button.cursor = 'pointer';
         }
     }
+    function checkValidate(){
+      const email = document.forms['signup-form']['email'].value;
+      const password = document.forms['signup-form']['pass'].value;
+      const password2 = document.forms['signup-form']['pass2'].value;
+      const button = document.getElementById('submit-btn').style;
+      const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+      if((!email.match(emailPattern) || password.length < 8 || password!==password2) ){
+          window.alert("Please Enter Valid Credentials");
+      }
+      else{
+          document.getElementById('submit-btn').type = 'submit';
+          button.cursor = 'pointer';
+      }
+  }
+
 
 function cap(){
         var alpha = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V'
